@@ -5,7 +5,9 @@
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "dev": "npx tsx watch index.js"
+        "dev": "npx tsx watch index.ts",
+        "build": "npx tsc",
+        "start": "npm run build && npx tsx index.ts"
     },
     "author": "Amani",
     "license": "ISC",
