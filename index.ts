@@ -52,7 +52,6 @@ const router = Router();
 const handleSTKPush = async (req: Request, res: Response) => {
     const { amount, phone } = req.body;
     const host = req.host;
-    const protocol = req.protocol;
 
     console.info(blue(`[INFO]: amount - ${amount} | phone - ${phone}`));
     if (!parseInt(amount)) {
@@ -79,7 +78,7 @@ const handleSTKPush = async (req: Request, res: Response) => {
     );
     console.info(blue(`[INFO]: password - ${password}`));
 
-    const callbackURL = `${protocol}://${host}/callback`;
+    const callbackURL = `https://${host}/callback`;
     console.info(blue(`[INFO]: callback - ${callbackURL}`));
 
     const payload = {
