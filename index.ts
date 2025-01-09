@@ -79,7 +79,7 @@ const handleSTKPush = async (req: Request, res: Response) => {
     console.info(blue(`[INFO]: password - ${password}`));
 
     const callbackURL = `https://${host}/callback`;
-    console.info(blue(`[INFO]: callback\n ${JSON.stringify(callbackURL)}`));
+    console.info(blue(`[INFO]: callback URL - ${callbackURL}`));
 
     const payload = {
         BusinessShortCode: shortcode,
@@ -135,7 +135,7 @@ router.post("/lipa", generateAccessToken, handleSTKPush);
 
 router.post("/callback", async (req, res) => {
     const callbackData = req.body;
-    console.info(`[INFO]: callback - ${callbackData}`);
+    console.info(`[INFO]: callback data\n${JSON.stringify(callbackData)}`);
     res.status(200).json({ message: "success" });
 });
 
