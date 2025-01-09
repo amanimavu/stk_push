@@ -79,7 +79,7 @@ const handleSTKPush = async (req: Request, res: Response) => {
     console.info(blue(`[INFO]: password - ${password}`));
 
     const callbackURL = `https://${host}/callback`;
-    console.info(blue(`[INFO]: callback - ${callbackURL}`));
+    console.info(blue(`[INFO]: callback\n ${JSON.stringify(callbackURL)}`));
 
     const payload = {
         BusinessShortCode: shortcode,
