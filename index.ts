@@ -51,6 +51,9 @@ const router = Router();
 
 const handleSTKPush = async (req: Request, res: Response) => {
     const { amount, phone } = req.body;
+    const host = req.host;
+    const protocol = req.protocol;
+
     console.info(blue(`[INFO]: amount - ${amount} | phone - ${phone}`));
     if (!parseInt(amount)) {
         res.status(422).json({
@@ -76,7 +79,7 @@ const handleSTKPush = async (req: Request, res: Response) => {
     );
     console.info(blue(`[INFO]: password - ${password}`));
 
-    const callbackURL = "https://1d97-41-90-36-205.ngrok-free.app/callback";
+    const callbackURL = `${protocol}://${host}/callback`;
 
     const payload = {
         BusinessShortCode: shortcode,
