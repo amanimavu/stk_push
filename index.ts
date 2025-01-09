@@ -135,7 +135,8 @@ router.post("/lipa", generateAccessToken, handleSTKPush);
 
 router.post("/callback", async (req, res) => {
     const callbackData = req.body;
-    console.info(`[INFO]: callback data\n${JSON.stringify(callbackData)}`);
+    console.log("callback data:");
+    console.log(callbackData);
     res.status(200).json({ message: "success" });
 });
 
