@@ -65,7 +65,7 @@ const handleSTKPush = async (req: Request, res: Response) => {
         return;
     }
     const access_token = req.query.token;
-    console.info(blue(`[INFO]: access token - ${access_token}`));
+    // console.info(blue(`[INFO]: access token - ${access_token}`));
 
     const shortcode = process.env.SHORTCODE as string;
     const passkey = process.env.PASSKEY;
@@ -76,7 +76,7 @@ const handleSTKPush = async (req: Request, res: Response) => {
     const password = Buffer.from(shortcode + passkey + timestamp).toString(
         "base64"
     );
-    console.info(blue(`[INFO]: password - ${password}`));
+    // console.info(blue(`[INFO]: password - ${password}`));
 
     const callbackURL = `https://${host}/callback`;
     console.info(blue(`[INFO]: callback URL - ${callbackURL}`));
